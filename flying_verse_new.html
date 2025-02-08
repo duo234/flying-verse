@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞花令</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>飞花令</h1>
+        <div id="game-board">
+            <div id="game-modes">
+                <button id="singleMode" class="mode-btn active">单人模式</button>
+                <button id="aiMode" class="mode-btn">AI对战</button>
+            </div>
+            
+            <div id="game-settings">
+                <div class="input-group">
+                    <label for="keyword">关键字：</label>
+                    <input type="text" id="keyword" maxlength="1" placeholder="请输入一个汉字">
+                    <p class="help-text">输入一个汉字作为关键字，然后开始游戏</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="verse">诗句：</label>
+                    <input type="text" id="verse" placeholder="请输入包含关键字的诗句" disabled>
+                    <p class="help-text">输入完整诗句（建议输入一整句，包含标点符号）</p>
+                </div>
+                
+                <button id="submit-btn" disabled>提交</button>
+            </div>
+
+            <div id="game-info">
+                <div class="info-item">
+                    <div class="info-label">剩余时间</div>
+                    <div class="info-value" id="timeLeft">60</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">当前得分</div>
+                    <div class="info-value" id="score">0</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">当前玩家</div>
+                    <div class="info-value" id="currentPlayer">玩家</div>
+                </div>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <div class="battle-area">
+                <div class="player-side">
+                    <div class="side-title">玩家回合</div>
+                    <div class="history" id="playerHistory"></div>
+                </div>
+                <div class="ai-side">
+                    <div class="side-title">AI回合</div>
+                    <div class="history" id="aiHistory"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
